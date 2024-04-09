@@ -1,0 +1,14 @@
+const express = require('express')
+const router = express.Router()
+
+router.post('/foodData', async (req, res) => {
+  try {
+    // console.log(global.food_items)
+    res.json(global.food_items)
+  } catch (err) {
+    console.log(err)
+    res.status(500).send('Server Error')
+  }
+})
+
+module.exports = router
